@@ -1,8 +1,8 @@
 package phone;
 
 import java.util.Scanner;
-//import java.util.regex.Matcher;
-//import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.google.i18n.phonenumbers.NumberParseException;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
@@ -34,19 +34,16 @@ public class MyPhone {
 		String region = "US";
 		PhoneNumber number=null;
 		try {
+			String regex="(?:\\+?1[-. ]?)?\\(?([0-9]{3})\\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})";
+			Pattern pattern= Pattern.compile(regex);
+			Matcher matcher= pattern.matcher(input);
+			if(matcher.matches())
 			number= pUtil.parse(input, region);
+			
 		} catch (NumberParseException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		/*
-		String regex="(?:\\+?1[-. ]?)?\\(?([0-9]{3})\\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})";
-		Pattern pattern= Pattern.compile(regex);
-		Matcher matcher= pattern.matcher(input);
-		if(matcher.matches())
-			return input;
-		*/
+			return null;
+		}		
 		
 		return number;
 		

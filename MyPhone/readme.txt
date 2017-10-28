@@ -16,3 +16,18 @@ so, I used this library which provides a better solution to produce the format i
 
 My function convertToE164Number takes input string provided by user and returns API's PhoneNumber format which can be further formatted into 
 above mentioned forms.
+
+
+Tests:
+
+Enter your number 
+7887887889
+Number in International format: +1 788-788-7889
+Number in National format: (788) 788-7889
+Number in E164 format: +17887887889
+
+
+Enter your number 
+679y99
+Number is invalid
+
