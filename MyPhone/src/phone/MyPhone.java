@@ -19,6 +19,7 @@ public class MyPhone {
 		Scanner in= new Scanner(System.in);
 		String inputNumber= in.nextLine();
 		PhoneNumber result= convertToE164Number(inputNumber);
+		System.out.println(result);
 		if(result==null)
 			System.out.println("Number is invalid");
 		else
@@ -30,7 +31,7 @@ public class MyPhone {
 		
 	}
 	
-	private static PhoneNumber convertToE164Number(String input){		
+	public static PhoneNumber convertToE164Number(String input){		
 		String region = "US";
 		PhoneNumber number=null;
 		try {
